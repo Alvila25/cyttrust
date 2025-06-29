@@ -17,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "templates/$1"
+      "dest": "templates/index.html"
     }
   ]
 }
