@@ -4,9 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CytTrust Chad | Cybersecurity Solutions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header, nav, section, footer {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    /* Header / Hero Section */
+    header {
+      background: #1a3c5e;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 8px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    header a {
+      background: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    header a:hover {
+      background: #e55a50;
+    }
+
+    /* Navigation */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #1a3c5e;
+      font-weight: bold;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6f61;
+    }
+
+    /* Sections */
+    section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #1a3c5e;
+    }
+
+    /* Card Lists (Services & Why Choose Us) */
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .card-list li {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card-list li:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-list li h3 {
+      font-size: 1.4em;
+      color: #1a3c5e;
+      margin-bottom: 10px;
+    }
+
+    .card-list li p {
+      color: #666;
+    }
+
+    /* About Section List */
+    #about ul {
+      list-style: none;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #about ul li {
+      margin: 10px 0;
+    }
+
+    /* Testimonials */
+    blockquote {
+      background: #f9f9f9;
+      border-left: 5px solid #ff6f61;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 10px;
+      font-style: italic;
+      color: #1a3c5e;
+    }
+
+    /* Contact Form */
+    #contact ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #contact label {
+      font-weight: bold;
+      color: #1a3c5e;
+    }
+
+    #contact input, #contact textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    #contact button {
+      background: #ff6f61;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #contact button:hover {
+      background: #e55a50;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a3c5e;
+      color: white;
+      border-radius: 8px;
+    }
+
+    footer a {
+      color: #ff6f61;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-list li {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <!-- Header / Hero Section -->
   <header>
     <h1>CytTrust Chad</h1>
@@ -39,7 +273,7 @@
   <!-- Services Section -->
   <section id="services">
     <h2>Our Core Services</h2>
-    <ul>
+    <ul class="card-list">
       <li>
         <h3>Cybersecurity Risk Assessment</h3>
         <p>Evaluate vulnerabilities and resilience posture.</p>
@@ -70,7 +304,7 @@
   <!-- Why Choose Us Section -->
   <section id="why">
     <h2>Why Choose CytTrust Chad</h2>
-    <ul>
+    <ul class="card-list">
       <li>
         <h3>Certified Expertise</h3>
         <p>ISC2-certified professionals with global & local insights.</p>
@@ -103,27 +337,22 @@
     </blockquote>
   </section>
 
-  <!-- Contact Section (Last) -->
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Ready to enhance your cyber resilience? Get in touch:</p>
-
     <ul>
       <li>Office: N’Djamena, Chad</li>
       <li>Email: <a href="mailto:contact@cyttrust.com">contact@cyttrust.com</a></li>
       <li>Phone: +235 XXX XXX XXX</li>
     </ul>
-
     <form>
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
-
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
-
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="4" required></textarea>
-
       <button type="submit">Send Message</button>
     </form>
   </section>
@@ -132,6 +361,5 @@
   <footer>
     <p>© 2025 CytTrust Chad. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
   </footer>
-
 </body>
 </html>
