@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CytTrust Chad: Expert cybersecurity solutions in N’Djamena, offering risk assessments, penetration testing, and more for enterprises and NGOs.">
-  <meta name="keywords" content="cybersecurity, Chad, N’Djamena, penetration testing, SOC, compliance">
-  <meta property="og:title" content="CytTrust Chad | Cybersecurity Solutions">
-  <meta property="og:description" content="Trusted cybersecurity services for Chad and Central Africa.">
+  <meta name="description" content="CytTrust Chad: Expert cybersecurity, IT solutions, website development, app development, and networking services in N’Djamena for schools, universities, and enterprises.">
+  <meta name="keywords" content="cybersecurity, IT solutions, website development, app development, networking, CCNA, Chad, N’Djamena">
+  <meta property="og:title" content="CytTrust Chad | Cybersecurity & IT Solutions">
+  <meta property="og:description" content="Trusted cybersecurity, website development, app development, and networking services for Chad and Central Africa.">
   <meta property="og:image" content="/assets/logo.png">
   <meta property="og:url" content="https://www.cyttrust.com">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com;">
-  <title>CytTrust Chad | Cybersecurity Solutions</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com;">
+  <title>CytTrust Chad | Cybersecurity & IT Solutions</title>
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -30,6 +31,12 @@
       min-height: 100vh;
     }
 
+    body[lang="ar"] {
+      font-family: 'Amiri', serif;
+      direction: rtl;
+      text-align: right;
+    }
+
     header, nav, main, section, footer {
       width: 100%;
       max-width: 1200px;
@@ -44,6 +51,10 @@
       text-align: center;
       padding: 60px 20px;
       border-radius: 8px;
+    }
+
+    body[lang="ar"] header {
+      text-align: right;
     }
 
     header img.logo {
@@ -92,6 +103,10 @@
       flex-wrap: wrap;
     }
 
+    body[lang="ar"] nav ul {
+      justify-content: flex-end;
+    }
+
     nav ul li {
       margin: 0 15px;
     }
@@ -115,6 +130,11 @@
       right: 20px;
     }
 
+    body[lang="ar"] .lang-switcher {
+      right: auto;
+      left: 20px;
+    }
+
     .lang-switcher select {
       padding: 5px;
       border-radius: 5px;
@@ -130,13 +150,17 @@
       text-align: center;
     }
 
+    body[lang="ar"] section {
+      text-align: right;
+    }
+
     section h2 {
       font-size: 2em;
       margin-bottom: 20px;
       color: #1a3c5e;
     }
 
-    /* Card Lists (Services & Why Choose Us) */
+    /* Card Lists (Services, IT Solutions, Certifications, Why Choose Us) */
     .card-list {
       display: flex;
       flex-wrap: wrap;
@@ -154,8 +178,17 @@
       transition: transform 0.2s;
     }
 
+    body[lang="ar"] .card-list li {
+      text-align: right;
+    }
+
     .card-list li:hover {
       transform: translateY(-5px);
+    }
+
+    .card-list li img {
+      max-width: 50px;
+      margin-bottom: 10px;
     }
 
     .card-list li h3 {
@@ -191,8 +224,23 @@
       margin: 0 auto;
     }
 
+    body[lang="ar"] #about ul {
+      text-align: right;
+    }
+
     #about ul li {
       margin: 10px 0;
+    }
+
+    /* Certifications Section */
+    #certifications .card-list li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body[lang="ar"] #certifications .card-list li {
+      align-items: flex-end;
     }
 
     /* Clients Section */
@@ -222,6 +270,11 @@
       border-radius: 5px;
     }
 
+    body[lang="ar"] blockquote {
+      border-left: none;
+      border-right: 5px solid #ff6f61;
+    }
+
     blockquote cite {
       display: block;
       margin-top: 10px;
@@ -245,6 +298,10 @@
       text-align: left;
     }
 
+    body[lang="ar"] #blog .blog-post {
+      text-align: right;
+    }
+
     #blog .blog-post h3 {
       font-size: 1.3em;
       color: #1a3c5e;
@@ -264,6 +321,10 @@
       gap: 15px;
       max-width: 500px;
       margin: 0 auto;
+    }
+
+    body[lang="ar"] #contact form {
+      align-items: flex-end;
     }
 
     #contact label {
@@ -323,6 +384,10 @@
       margin: 0 auto;
     }
 
+    body[lang="ar"] #privacy ul {
+      text-align: right;
+    }
+
     #privacy ul li {
       margin: 10px 0;
     }
@@ -341,6 +406,11 @@
       transition: background 0.3s;
     }
 
+    body[lang="ar"] #back-to-top {
+      right: auto;
+      left: 20px;
+    }
+
     #back-to-top:hover {
       background: #e55a50;
     }
@@ -352,6 +422,10 @@
       background: #1a3c5e;
       color: white;
       border-radius: 8px;
+    }
+
+    body[lang="ar"] footer {
+      text-align: right;
     }
 
     footer a {
@@ -369,6 +443,10 @@
       nav ul {
         flex-direction: column;
         align-items: center;
+      }
+
+      body[lang="ar"] nav ul {
+        align-items: flex-end;
       }
 
       .card-list li, #blog .blog-post {
@@ -400,209 +478,306 @@
         font-size: 1.5em;
       }
 
-      .card-lis
-t li h3, #blog .blog-post h3 {
+      .card-list li h3, #blog .blog-post h3 {
         font-size: 1.2em;
       }
     }
   </style>
 </head>
-<body>
+<body lang="en">
   <!-- Language Switcher -->
   <div class="lang-switcher">
     <select id="language" aria-label="Select language">
       <option value="en">English</option>
       <option value="fr">Français</option>
+      <option value="ar">العربية</option>
     </select>
   </div>
 
   <!-- Header / Hero Section -->
   <header>
     <img src="/assets/logo.png" alt="CytTrust Chad Logo" class="logo">
-    <h1 data-fr="CytTrust Chad">CytTrust Chad</h1>
-    <p data-fr="Votre partenaire de confiance en cybersécurité">Your Trusted Partner in Cybersecurity</p>
-    <a href="#contact" aria-label="Request a consultation with CytTrust Chad">Request a Consultation</a>
+    <h1 data-fr="CytTrust Chad" data-ar="سايت ترست تشاد">CytTrust Chad</h1>
+    <p data-fr="Votre partenaire de confiance en cybersécurité, solutions informatiques, développement de sites web, applications et réseaux" data-ar="شريكك الموثوق في الأمن السيبراني، الحلول التقنية، تطوير المواقع، التطبيقات، والشبكات">Your Trusted Partner in Cybersecurity, IT Solutions, Website Development, App Development, and Networking</p>
+    <a href="#contact" aria-label="Request a consultation with CytTrust Chad" data-fr="Demander une consultation" data-ar="طلب استشارة">Request a Consultation</a>
   </header>
 
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#about" aria-label="Learn about CytTrust Chad">About</a></li>
-      <li><a href="#services" aria-label="View our cybersecurity services">Services</a></li>
-      <li><a href="#why" aria-label="Why choose CytTrust Chad">Why Choose Us</a></li>
-      <li><a href="#clients" aria-label="Our clients and case studies">Clients</a></li>
-      <li><a href="#testimonials" aria-label="Read client testimonials">Testimonials</a></li>
-      <li><a href="#blog" aria-label="Read our latest blog posts">Blog</a></li>
-      <li><a href="#contact" aria-label="Contact CytTrust Chad">Contact</a></li>
-      <li><a href="#privacy" aria-label="View our privacy policy">Privacy</a></li>
+      <li><a href="#about" aria-label="Learn about CytTrust Chad" data-fr="À propos" data-ar="نبذة عنا">About</a></li>
+      <li><a href="#services" aria-label="View our cybersecurity and networking services" data-fr="Services" data-ar="الخدمات">Services</a></li>
+      <li><a href="#it-solutions" aria-label="View our IT solutions" data-fr="Solutions informatiques" data-ar="حلول تقنية">IT Solutions</a></li>
+      <li><a href="#certifications" aria-label="View our certifications" data-fr="Certifications" data-ar="الشهادات">Certifications</a></li>
+      <li><a href="#why" aria-label="Why choose CytTrust Chad" data-fr="Pourquoi nous choisir" data-ar="لماذا تختارنا">Why Choose Us</a></li>
+      <li><a href="#clients" aria-label="Our clients and case studies" data-fr="Clients" data-ar="العملاء">Clients</a></li>
+      <li><a href="#testimonials" aria-label="Read client testimonials" data-fr="Témoignages" data-ar="الشهادات">Testimonials</a></li>
+      <li><a href="#blog" aria-label="Read our latest blog posts" data-fr="Blog" data-ar="المدونة">Blog</a></li>
+      <li><a href="#contact" aria-label="Contact CytTrust Chad" data-fr="Contact" data-ar="اتصل بنا">Contact</a></li>
+      <li><a href="#privacy" aria-label="View our privacy policy" data-fr="Politique de confidentialité" data-ar="سياسة الخصوصية">Privacy</a></li>
     </ul>
   </nav>
 
   <main>
     <!-- About Section -->
     <section id="about">
-      <h2 data-fr="À propos de CytTrust Chad">About CytTrust Chad</h2>
-      <p data-fr="CytTrust Chad est une entreprise privée de cybersécurité basée à N’Djamena, fondée par des professionnels certifiés ISC2.">CytTrust Chad is a private cybersecurity firm based in N’Djamena, founded by ISC2-certified professionals.</p>
-      <p data-fr="Nous servons les entreprises, les ONG, les institutions financières et les agences gouvernementales à travers le Tchad et l’Afrique centrale.">We serve enterprises, NGOs, financial institutions, and government agencies across Chad and Central Africa.</p>
+      <h2 data-fr="À propos de CytTrust Chad" data-ar="نبذة عن سايت ترست تشاد">About CytTrust Chad</h2>
+      <p data-fr="CytTrust Chad est une entreprise privée de cybersécurité, de solutions informatiques, de développement de sites web, d’applications et de réseaux basée à N’Djamena, fondée par des professionnels certifiés ISC2 et Cisco." data-ar="سايت ترست تشاد هي شركة خاصة للأمن السيبراني، الحلول التقنية، تطوير المواقع، التطبيقات، والشبكات، مقرها في انجمينا، أسسها محترفون معتمدون من ISC2 وسيسكو.">CytTrust Chad is a private cybersecurity, IT solutions, website development, app development, and networking firm based in N’Djamena, founded by ISC2 and Cisco-certified professionals.</p>
+      <p data-fr="Nous servons les écoles, universités, entreprises, ONG, institutions financières et agences gouvernementales à travers le Tchad et l’Afrique centrale avec des solutions sécurisées et innovantes." data-ar="نخدم المدارس، الجامعات، الشركات، المنظمات غير الحكومية، المؤسسات المالية، والوكالات الحكومية في تشاد ووسط إفريقيا بحلول آمنة ومبتكرة.">We serve schools, universities, enterprises, NGOs, financial institutions, and government agencies across Chad and Central Africa with secure and innovative solutions.</p>
       <ul>
-        <li><strong data-fr="Mission :">Mission:</strong> <span data-fr="Sécuriser l’infrastructure numérique de notre région avec des solutions de cybersécurité pilotées par des experts.">To secure our region’s digital infrastructure with expert-driven cybersecurity solutions.</span></li>
-        <li><strong data-fr="Vision :">Vision:</strong> <span data-fr="Un Tchad numériquement confiant où la sécurité favorise l’innovation.">A digitally confident Chad where security enables innovation.</span></li>
+        <li><strong data-fr="Mission :" data-ar="المهمة:">Mission:</strong> <span data-fr="Sécuriser l’infrastructure numérique de notre région avec des solutions de cybersécurité, informatiques, et de réseaux pilotées par des experts." data-ar="تأمين البنية التحتية الرقمية في منطقتنا بحلول الأمن السيبراني، التقنية، والشبكات بقيادة خبراء.">To secure our region’s digital infrastructure with expert-driven cybersecurity, IT, and networking solutions.</span></li>
+        <li><strong data-fr="Vision :" data-ar="الرؤية:">Vision:</strong> <span data-fr="Un Tchad numériquement confiant où la sécurité favorise l’innovation." data-ar="تشاد واثقة رقميًا حيث يعزز الأمن الابتكار.">A digitally confident Chad where security enables innovation.</span></li>
       </ul>
     </section>
 
     <!-- Services Section -->
     <section id="services">
-      <h2 data-fr="Nos services principaux">Our Core Services</h2>
+      <h2 data-fr="Nos services de cybersécurité" data-ar="خدماتنا في الأمن السيبراني">Our Cybersecurity Services</h2>
       <ul class="card-list">
         <li>
-          <h3 data-fr="Évaluation des risques en cybersécurité">Cybersecurity Risk Assessment</h3>
-          <p data-fr="Évaluer les vulnérabilités et la posture de résilience.">Evaluate vulnerabilities and resilience posture.</p>
-          <a href="/services/risk-assessment" aria-label="Learn more about Cybersecurity Risk Assessment">Learn More</a>
+          <img src="/assets/icons/risk-assessment.png" alt="Risk Assessment Icon">
+          <h3 data-fr="Évaluation des risques en cybersécurité" data-ar="تقييم مخاطر الأمن السيبراني">Cybersecurity Risk Assessment</h3>
+          <p data-fr="Évaluer les vulnérabilités et la posture de résilience." data-ar="تقييم الثغرات الأمنية ووضعية المرونة.">Evaluate vulnerabilities and resilience posture.</p>
+          <a href="/services/risk-assessment" aria-label="Learn more about Cybersecurity Risk Assessment" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Tests d’intrusion et Red Teaming">Penetration Testing & Red Teaming</h3>
-          <p data-fr="Simuler des attaques réelles pour identifier et corriger les faiblesses.">Simulate real-world attacks to expose and fix weak points.</p>
-          <a href="/services/penetration-testing" aria-label="Learn more about Penetration Testing">Learn More</a>
+          <img src="/assets/icons/penetration-testing.png" alt="Penetration Testing Icon">
+          <h3 data-fr="Tests d’intrusion et Red Teaming" data-ar="اختبارات الاختراق وفرق الهجوم">Penetration Testing & Red Teaming</h3>
+          <p data-fr="Simuler des attaques réelles pour identifier et corriger les faiblesses." data-ar="محاكاة هجمات واقعية لتحديد الضعف وإصلاحه.">Simulate real-world attacks to expose and fix weak points.</p>
+          <a href="/services/penetration-testing" aria-label="Learn more about Penetration Testing" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Opérations de sécurité gérées (SOC)">Managed Security Operations (SOC)</h3>
-          <p data-fr="Surveillance continue, détection et réponse.">Continuous monitoring, detection & response.</p>
-          <a href="/services/soc" aria-label="Learn more about Managed Security Operations">Learn More</a>
+          <img src="/assets/icons/soc.png" alt="SOC Icon">
+          <h3 data-fr="Opérations de sécurité gérées (SOC)" data-ar="عمليات الأمن المُدارة (SOC)">Managed Security Operations (SOC)</h3>
+          <p data-fr="Surveillance continue, détection et réponse." data-ar="المراقبة المستمرة، الكشف والاستجابة.">Continuous monitoring, detection & response.</p>
+          <a href="/services/soc" aria-label="Learn more about Managed Security Operations" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Sensibilisation et formation à la sécurité">Security Awareness & Training</h3>
-          <p data-fr="Construire une culture d’équipe axée sur la sécurité.">Build a security-first team culture.</p>
-          <a href="/services/training" aria-label="Learn more about Security Awareness and Training">Learn More</a>
+          <img src="/assets/icons/training.png" alt="Training Icon">
+          <h3 data-fr="Sensibilisation et formation à la sécurité" data-ar="التوعية والتدريب الأمني">Security Awareness & Training</h3>
+          <p data-fr="Construire une culture d’équipe axée sur la sécurité." data-ar="بناء ثقافة فريق تركز على الأمن.">Build a security-first team culture.</p>
+          <a href="/services/training" aria-label="Learn more about Security Awareness and Training" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Conformité et conseil">Compliance & Advisory</h3>
-          <p data-fr="S’aligner sur les normes ISO, GDPR, NIST.">Align with ISO, GDPR, NIST standards.</p>
-          <a href="/services/compliance" aria-label="Learn more about Compliance and Advisory">Learn More</a>
+          <img src="/assets/icons/compliance.png" alt="Compliance Icon">
+          <h3 data-fr="Conformité et conseil" data-ar="الامتثال والاستشارات">Compliance & Advisory</h3>
+          <p data-fr="S’aligner sur les normes ISO, GDPR, NIST." data-ar="التوافق مع معايير ISO، GDPR، NIST.">Align with ISO, GDPR, NIST standards.</p>
+          <a href="/services/compliance" aria-label="Learn more about Compliance and Advisory" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Réponse aux incidents et forensique">Incident Response & Forensics</h3>
-          <p data-fr="Support rapide, récupération et renforcement.">Rapid support, recovery, and hardening.</p>
-          <a href="/services/incident-response" aria-label="Learn more about Incident Response and Forensics">Learn More</a>
+          <img src="/assets/icons/incident-response.png" alt="Incident Response Icon">
+          <h3 data-fr="Réponse aux incidents et forensique" data-ar="الاستجابة للحوادث والتحليل الجنائي">Incident Response & Forensics</h3>
+          <p data-fr="Support rapide, récupération et renforcement." data-ar="دعم سريع، استعادة وتعزيز الأمن.">Rapid support, recovery, and hardening.</p>
+          <a href="/services/incident-response" aria-label="Learn more about Incident Response and Forensics" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- IT Solutions Section -->
+    <section id="it-solutions">
+      <h2 data-fr="Nos solutions informatiques" data-ar="حلولنا التقنية">Our IT Solutions</h2>
+      <ul class="card-list">
+        <li>
+          <img src="/assets/icons/website-development.png" alt="Website Development Icon">
+          <h3 data-fr="Développement de sites web pour écoles et universités" data-ar="تطوير مواقع للمدارس والجامعات">Website Development for Schools & Universities</h3>
+          <p data-fr="Sites web sécurisés et CMS pour l’éducation et les institutions." data-ar="مواقع آمنة وأنظمة إدارة محتوى للتعليم والمؤسسات.">Secure websites and CMS for education and institutions.</p>
+          <a href="/it-solutions/website-development" aria-label="Learn more about Website Development" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+        <li>
+          <img src="/assets/icons/e-learning.png" alt="E-Learning Icon">
+          <h3 data-fr="Plateformes d’e-learning" data-ar="منصات التعليم الإلكتروني">E-Learning Platforms</h3>
+          <p data-fr="Solutions d’apprentissage en ligne personnalisées et sécurisées." data-ar="حلول تعليم إلكتروني مخصصة وآمنة.">Customized and secure online learning solutions.</p>
+          <a href="/it-solutions/e-learning" aria-label="Learn more about E-Learning Platforms" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+        <li>
+          <img src="/assets/icons/website-security.png" alt="Website Security Icon">
+          <h3 data-fr="Sécurité des sites web" data-ar="أمن المواقع الإلكترونية">Website Security</h3>
+          <p data-fr="Développement sécurisé, analyse des vulnérabilités et configuration WAF." data-ar="تطوير آمن، فحص الثغرات، وإعداد جدار الحماية للتطبيقات.">Secure web development, vulnerability scanning, and WAF setup.</p>
+          <a href="/it-solutions/website-security" aria-label="Learn more about Website Security" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+        <li>
+          <img src="/assets/icons/app-development.png" alt="App Development Icon">
+          <h3 data-fr="Développement d’applications sécurisées" data-ar="تطوير تطبيقات آمنة">Secure App Development</h3>
+          <p data-fr="Conception et développement d’applications mobiles/web sécurisées." data-ar="تصميم وتطوير تطبيقات جوالة/إلكترونية آمنة.">Design and develop secure mobile/web applications.</p>
+          <a href="/it-solutions/app-development" aria-label="Learn more about Secure App Development" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+        <li>
+          <img src="/assets/icons/networking.png" alt="Networking Icon">
+          <h3 data-fr="Solutions de réseau" data-ar="حلول الشبكات">Networking Solutions</h3>
+          <p data-fr="Conception, configuration et gestion de réseaux sécurisés (CCNA, CCNP)." data-ar="تصميم، تهيئة، وإدارة شبكات آمنة (CCNA، CCNP).">Design, configure, and manage secure networks (CCNA, CCNP).</p>
+          <a href="/it-solutions/networking" aria-label="Learn more about Networking Solutions" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+        <li>
+          <img src="/assets/icons/cloud.png" alt="Cloud Integration Icon">
+          <h3 data-fr="Intégration cloud" data-ar="التكامل السحابي">Cloud Integration</h3>
+          <p data-fr="Solutions cloud sécurisées pour les institutions et entreprises." data-ar="حلول سحابية آمنة للمؤسسات والشركات.">Secure cloud solutions for institutions and businesses.</p>
+          <a href="/it-solutions/cloud" aria-label="Learn more about Cloud Integration" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2 data-fr="Nos certifications" data-ar="شهاداتنا">Our Certifications</h2>
+      <p data-fr="Notre équipe est certifiée par des leaders de l’industrie, garantissant une expertise de haut niveau." data-ar="فريقنا معتمد من قادة الصناعة، مما يضمن خبرة عالية المستوى.">Our team is certified by industry leaders, ensuring top-tier expertise.</p>
+      <ul class="card-list">
+        <li>
+          <img src="/assets/icons/ccna.png" alt="CCNA Icon">
+          <h3 data-fr="Cisco Certified Network Associate (CCNA)" data-ar="سيسكو معتمد شبكات (CCNA)">Cisco Certified Network Associate (CCNA)</h3>
+          <p data-fr="Validation des compétences en réseau pour la configuration et la gestion des infrastructures réseau." data-ar="تأكيد مهارات الشبكات لتهيئة وإدارة البنية التحتية للشبكات.">Validates networking skills for configuring and managing network infrastructure.</p>
+        </li>
+        <li>
+          <img src="/assets/icons/ccnp.png" alt="CCNP Icon">
+          <h3 data-fr="Cisco Certified Network Professional (CCNP)" data-ar="سيسكو معتمد محترف شبكات (CCNP)">Cisco Certified Network Professional (CCNP)</h3>
+          <p data-fr="Expertise avancée dans les solutions réseau complexes et sécurisées." data-ar="خبرة متقدمة في حلول الشبكات المعقدة والآمنة.">Advanced expertise in complex and secure network solutions.</p>
+        </li>
+        <li>
+          <img src="/assets/icons/cissp.png" alt="CISSP Icon">
+          <h3 data-fr="CISSP (ISC2)" data-ar="CISSP (ISC2)">CISSP (ISC2)</h3>
+          <p data-fr="Maîtrise de la conception et de la gestion de programmes de cybersécurité." data-ar="إتقان تصميم وإدارة برامج الأمن السيبراني.">Mastery in designing and managing cybersecurity programs.</p>
+        </li>
+        <li>
+          <img src="/assets/icons/security-plus.png" alt="Security+ Icon">
+          <h3 data-fr="CompTIA Security+" data-ar="CompTIA Security+">CompTIA Security+</h3>
+          <p data-fr="Compétences fondamentales en cybersécurité pour les environnements cloud et sur site." data-ar="مهارات أساسية في الأمن السيبراني للبيئات السحابية والمحلية.">Core cybersecurity skills for cloud and on-premises environments.</p>
         </li>
       </ul>
     </section>
 
     <!-- Why Choose Us Section -->
     <section id="why">
-      <h2 data-fr="Pourquoi choisir CytTrust Chad">Why Choose CytTrust Chad</h2>
+      <h2 data-fr="Pourquoi choisir CytTrust Chad" data-ar="لماذا تختار سايت ترست تشاد">Why Choose CytTrust Chad</h2>
       <ul class="card-list">
         <li>
-          <h3 data-fr="Expertise certifiée">Certified Expertise</h3>
-          <p data-fr="Professionnels certifiés ISC2 avec des perspectives globales et locales.">ISC2-certified professionals with global & local insights.</p>
-          <a href="/why/expertise" aria-label="Learn more about our certified expertise">Learn More</a>
+          <h3 data-fr="Expertise certifiée" data-ar="خبرة معتمدة">Certified Expertise</h3>
+          <p data-fr="Professionnels certifiés ISC2 et Cisco avec des perspectives globales et locales." data-ar="محترفون معتمدون من ISC2 وسيسكو بمنظورات عالمية ومحلية.">ISC2 and Cisco-certified professionals with global & local insights.</p>
+          <a href="/why/expertise" aria-label="Learn more about our certified expertise" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Solutions localisées">Localized Solutions</h3>
-          <p data-fr="Stratégies adaptées au paysage numérique du Tchad.">Tailored strategies for Chad’s digital landscape.</p>
-          <a href="/why/localized" aria-label="Learn more about our localized solutions">Learn More</a>
+          <h3 data-fr="Solutions localisées" data-ar="حلول محلية">Localized Solutions</h3>
+          <p data-fr="Stratégies adaptées au paysage numérique du Tchad." data-ar="استراتيجيات مصممة للمشهد الرقمي في تشاد.">Tailored strategies for Chad’s digital landscape.</p>
+          <a href="/why/localized" aria-label="Learn more about our localized solutions" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Couverture complète">Comprehensive Coverage</h3>
-          <p data-fr="Des audits de risques à la récupération rapide des incidents.">From risk audits to rapid incident recovery.</p>
-          <a href="/why/coverage" aria-label="Learn more about our comprehensive coverage">Learn More</a>
+          <h3 data-fr="Couverture complète" data-ar="تغطية شاملة">Comprehensive Coverage</h3>
+          <p data-fr="Des audits de risques aux solutions informatiques et réseau sécurisées." data-ar="من تدقيق المخاطر إلى حلول تقنية وشبكات آمنة.">From risk audits to secure IT and network solutions.</p>
+          <a href="/why/coverage" aria-label="Learn more about our comprehensive coverage" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
         <li>
-          <h3 data-fr="Relations de confiance">Trusted Relationships</h3>
-          <p data-fr="Nous construisons des partenariats à long terme basés sur la confiance.">We build long-term partnerships based on trust.</p>
-          <a href="/why/trust" aria-label="Learn more about our trusted relationships">Learn More</a>
+          <h3 data-fr="Relations de confiance" data-ar="علاقات موثوقة">Trusted Relationships</h3>
+          <p data-fr="Nous construisons des partenariats à long terme basés sur la confiance." data-ar="نبني شراكات طويلة الأمد قائمة على الثقة.">We build long-term partnerships based on trust.</p>
+          <a href="/why/trust" aria-label="Learn more about our trusted relationships" data-fr="En savoir plus" data-ar="تعرف على المزيد">Learn More</a>
         </li>
       </ul>
     </section>
 
     <!-- Clients Section -->
     <section id="clients">
-      <h2 data-fr="Nos clients">Our Clients</h2>
+      <h2 data-fr="Nos clients" data-ar="عملاؤنا">Our Clients</h2>
       <div class="client-logos">
         <img src="/assets/client1.png" alt="Client 1 Logo">
         <img src="/assets/client2.png" alt="Client 2 Logo">
         <img src="/assets/client3.png" alt="Client 3 Logo">
       </div>
-      <p data-fr="Découvrez comment nous avons aidé nos clients à sécuriser leurs opérations.">Learn how we’ve helped clients secure their operations.</p>
-      <a href="/case-studies" aria-label="View our case studies">View Case Studies</a>
+      <p data-fr="Découvrez comment nous avons sécurisé les réseaux, applications et sites web de nos clients." data-ar="اكتشف كيف قمنا بتأمين شبكات، تطبيقات، ومواقع عملائنا.">Learn how we’ve secured our clients’ networks, applications, and websites.</p>
+      <a href="/case-studies" aria-label="View our case studies" data-fr="Voir nos études de cas" data-ar="عرض دراسات الحالة">View Case Studies</a>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials">
-      <h2 data-fr="Témoignages">Testimonials</h2>
+      <h2 data-fr="Témoignages" data-ar="الشهادات">Testimonials</h2>
       <blockquote>
-        <p data-fr="L’évaluation de CytTrust Chad a transformé notre stratégie de sécurité informatique—professionnelle, perspicace et adaptée localement.">“CytTrust Chad’s assessment transformed our IT security strategy—professional, insightful, and locally attuned.”</p>
+        <p data-fr="L’évaluation de CytTrust Chad a transformé notre stratégie de sécurité informatique—professionnelle, perspicace et adaptée localement." data-ar="تقييم سايت ترست تشاد غيّر استراتيجيتنا للأمن السيبراني—احترافي، ثاقب، ومُلائم محليًا.">“CytTrust Chad’s assessment transformed our IT security strategy—professional, insightful, and locally attuned.”</p>
         <cite>— IT Director, National NGO in N’Djamena</cite>
       </blockquote>
       <blockquote>
-        <p data-fr="Leurs tests d’intrusion ont révélé des vulnérabilités critiques que nous ignorions. Un tournant décisif.">“Their penetration testing uncovered critical vulnerabilities we didn’t know existed. A game-changer.”</p>
+        <p data-fr="Leurs tests d’intrusion ont révélé des vulnérabilités critiques que nous ignorions. Un tournant décisif." data-ar="اختبارات الاختراق كشفت عن ثغرات حرجة لم نكن نعلم بوجودها. نقطة تحول حاسمة.">“Their penetration testing uncovered critical vulnerabilities we didn’t know existed. A game-changer.”</p>
         <cite>— CTO, Regional Bank</cite>
+      </blockquote>
+      <blockquote>
+        <p data-fr="Leur expertise en réseau a optimisé notre infrastructure, améliorant la sécurité et la performance." data-ar="خبرتهم في الشبكات حسّنت بنيتنا التحتية، معززة الأمن والأداء.">“Their networking expertise optimized our infrastructure, enhancing security and performance.”</p>
+        <cite>— Network Manager, Government Agency</cite>
+      </blockquote>
+      <blockquote>
+        <p data-fr="Le site web de notre université, développé par CytTrust Chad, est sécurisé et convivial." data-ar="موقع جامعتنا، الذي طورته سايت ترست تشاد، آمن وسهل الاستخدام.">“Our university’s website, developed by CytTrust Chad, is secure and user-friendly.”</p>
+        <cite>— Dean, University in N’Djamena</cite>
       </blockquote>
     </section>
 
     <!-- Blog Section -->
     <section id="blog">
-      <h2 data-fr="Blog et actualités">Blog & News</h2>
+      <h2 data-fr="Blog et actualités" data-ar="المدونة والأخبار">Blog & News</h2>
       <div class="blog-posts">
         <div class="blog-post">
-          <h3 data-fr="Top 5 des menaces cybernétiques au Tchad en 2025">Top 5 Cybersecurity Threats in Chad for 2025</h3>
-          <p data-fr="Explorez les principales menaces et comment s’y préparer.">Explore the top threats and how to prepare.</p>
-          <a href="/blog/cyber-threats-2025" aria-label="Read more about cybersecurity threats in 2025">Read More</a>
+          <h3 data-fr="Top 5 des menaces cybernétiques au Tchad en 2025" data-ar="أهم 5 تهديدات الأمن السيبراني في تشاد لعام 2025">Top 5 Cybersecurity Threats in Chad for 2025</h3>
+          <p data-fr="Explorez les principales menaces et comment s’y préparer." data-ar="استكشف أبرز التهديدات وكيفية التحضير لها.">Explore the top threats and how to prepare.</p>
+          <a href="/blog/cyber-threats-2025" aria-label="Read more about cybersecurity threats in 2025" data-fr="Lire plus" data-ar="اقرأ المزيد">Read More</a>
         </div>
         <div class="blog-post">
-          <h3 data-fr="Construire une culture de cybersécurité">Building a Cybersecurity Culture</h3>
-          <p data-fr="Conseils pour former vos équipes à la vigilance.">Tips for training your team to stay vigilant.</p>
-          <a href="/blog/cybersecurity-culture" aria-label="Read more about building a cybersecurity culture">Read More</a>
+          <h3 data-fr="Construire une culture de cybersécurité" data-ar="بناء ثقافة الأمن السيبراني">Building a Cybersecurity Culture</h3>
+          <p data-fr="Conseils pour former vos équipes à la vigilance." data-ar="نصائح لتدريب فرقك على البقاء يقظين.">Tips for training your team to stay vigilant.</p>
+          <a href="/blog/cybersecurity-culture" aria-label="Read more about building a cybersecurity culture" data-fr="Lire plus" data-ar="اقرأ المزيد">Read More</a>
+        </div>
+        <div class="blog-post">
+          <h3 data-fr="Sécuriser votre application mobile" data-ar="تأمين تطبيقك الجوال">Securing Your Mobile App</h3>
+          <p data-fr="Meilleures pratiques pour le développement d’applications sécurisées." data-ar="أفضل الممارسات لتطوير تطبيقات آمنة.">Best practices for secure app development.</p>
+          <a href="/blog/secure-app-development" aria-label="Read more about secure app development" data-fr="Lire plus" data-ar="اقرأ المزيد">Read More</a>
+        </div>
+        <div class="blog-post">
+          <h3 data-fr="Développer un site web pour votre école" data-ar="تطوير موقع إلكتروني لمدرستك">Developing a Website for Your School</h3>
+          <p data-fr="Comment créer un site éducatif sécurisé et efficace." data-ar="كيفية إنشاء موقع تعليمي آمن وفعال.">How to create a secure and effective educational website.</p>
+          <a href="/blog/school-website" aria-label="Read more about developing a school website" data-fr="Lire plus" data-ar="اقرأ المزيد">Read More</a>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-      <h2 data-fr="Contactez-nous">Contact Us</h2>
-      <p data-fr="Prêt à renforcer votre résilience cybernétique ? Contactez-nous :">Ready to enhance your cyber resilience? Get in touch:</p>
+      <h2 data-fr="Contactez-nous" data-ar="اتصل بنا">Contact Us</h2>
+      <p data-fr="Prêt à renforcer votre résilience cybernétique, informatique et réseau ? Contactez-nous :" data-ar="هل أنت جاهز لتعزيز مرونتك السيبرانية، التقنية، والشبكات؟ تواصل معنا:">Ready to enhance your cyber, IT, and network resilience? Get in touch:</p>
       <ul>
-        <li data-fr="Bureau : N’Djamena, Tchad">Office: N’Djamena, Chad</li>
-        <li>Email: <a href="mailto:contact@cyttrust.com" aria-label="Email CytTrust Chad">contact@cyttrust.com</a></li>
-        <li data-fr="Téléphone : +235 XXX XXX XXX">Phone: +235 XXX XXX XXX</li>
+        <li data-fr="Bureau : N’Djamena, Tchad" data-ar="المكتب: انجمينا، تشاد">Office: N’Djamena, Chad</li>
+        <li>Email: <a href="mailto:contact@cyttrust.com" aria-label="Email CytTrust Chad" data-fr="Email" data-ar="البريد الإلكتروني">contact@cyttrust.com</a></li>
+        <li data-fr="Téléphone : +235 XXX XXX XXX" data-ar="الهاتف: +235 XXX XXX XXX">Phone: +235 XXX XXX XXX</li>
       </ul>
       <form id="contact-form" novalidate>
-        <label for="name" data-fr="Nom">Name</label>
+        <label for="name" data-fr="Nom" data-ar="الاسم">Name</label>
         <input type="text" id="name" name="name" required aria-required="true">
-        <label for="email" data-fr="Email">Email</label>
+        <label for="email" data-fr="Email" data-ar="البريد الإلكتروني">Email</label>
         <input type="email" id="email" name="email" required aria-required="true">
-        <label for="message" data-fr="Message">Message</label>
+        <label for="message" data-fr="Message" data-ar="الرسالة">Message</label>
         <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
-        <button type="submit" aria-label="Send message to CytTrust Chad" data-fr="Envoyer le message">Send Message</button>
+        <button type="submit" aria-label="Send message to CytTrust Chad" data-fr="Envoyer le message" data-ar="إرسال الرسالة">Send Message</button>
         <div class="form-message" id="form-message"></div>
       </form>
     </section>
 
     <!-- Privacy Policy Section -->
     <section id="privacy">
-      <h2 data-fr="Politique de confidentialité">Privacy Policy</h2>
-      <p data-fr="Chez CytTrust Chad, nous nous engageons à protéger vos données personnelles.">At CytTrust Chad, we are committed to protecting your personal information.</p>
+      <h2 data-fr="Politique de confidentialité" data-ar="سياسة الخصوصية">Privacy Policy</h2>
+      <p data-fr="Chez CytTrust Chad, nous nous engageons à protéger vos données personnelles." data-ar="في سايت ترست تشاد، نحن ملتزمون بحماية بياناتك الشخصية.">At CytTrust Chad, we are committed to protecting your personal information.</p>
       <ul>
-        <li data-fr="Collecte de données : Nous collectons uniquement les données nécessaires via notre formulaire de contact (nom, email, message).">Data Collection: We only collect necessary data via our contact form (name, email, message).</li>
-        <li data-fr="Utilisation : Les données sont utilisées pour répondre à vos demandes et ne sont pas partagées sans consentement.">Usage: Data is used to respond to inquiries and not shared without consent.</li>
-        <li data-fr="Sécurité : Nous utilisons des protocoles sécurisés pour protéger vos données.">Security: We use secure protocols to safeguard your data.</li>
-        <li data-fr="Conformité : Nous respectons les normes GDPR et locales.">Compliance: We adhere to GDPR and local regulations.</li>
+        <li data-fr="Collecte de données : Nous collectons uniquement les données nécessaires via notre formulaire de contact (nom, email, message)." data-ar="جمع البيانات: نجمع فقط البيانات الضرورية عبر نموذج الاتصال (الاسم، البريد الإلكتروني، الرسالة).">Data Collection: We only collect necessary data via our contact form (name, email, message).</li>
+        <li data-fr="Utilisation : Les données sont utilisées pour répondre à vos demandes et ne sont pas partagées sans consentement." data-ar="الاستخدام: تُستخدم البيانات للرد على استفساراتك ولا تُشارك دون موافقة.">Usage: Data is used to respond to inquiries and not shared without consent.</li>
+        <li data-fr="Sécurité : Nous utilisons des protocoles sécurisés pour protéger vos données." data-ar="الأمن: نستخدم بروتوكولات آمنة لحماية بياناتك.">Security: We use secure protocols to safeguard your data.</li>
+        <li data-fr="Conformité : Nous respectons les normes GDPR et locales." data-ar="الامتثال: نلتزم بمعايير GDPR واللوائح المحلية.">Compliance: We adhere to GDPR and local regulations.</li>
       </ul>
-      <p data-fr="Pour plus de détails, contactez-nous à contact@cyttrust.com.">For more details, contact us at contact@cyttrust.com.</p>
+      <p data-fr="Pour plus de détails, contactez-nous à contact@cyttrust.com." data-ar="لمزيد من التفاصيل، تواصل معنا على contact@cyttrust.com.">For more details, contact us at contact@cyttrust.com.</p>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 CytTrust Chad. All rights reserved.</p>
+    <p data-fr="© 2025 CytTrust Chad. Tous droits réservés." data-ar="© 2025 سايت ترست تشاد. جميع الحقوق محفوظة.">© 2025 CytTrust Chad. All rights reserved.</p>
     <p>
-      <a href="#privacy" aria-label="View our privacy policy" data-fr="Politique de confidentialité">Privacy Policy</a> |
-      <a href="https://www.linkedin.com/company/cyttrust" aria-label="Visit our LinkedIn page">LinkedIn</a> |
-      <a href="https://x.com/cyttrust" aria-label="Visit our X profile">X</a>
+      <a href="#privacy" aria-label="View our privacy policy" data-fr="Politique de confidentialité" data-ar="سياسة الخصوصية">Privacy Policy</a> |
+      <a href="https://www.linkedin.com/company/cyttrust" aria-label="Visit our LinkedIn page" data-fr="LinkedIn" data-ar="لينكدإن">LinkedIn</a> |
+      <a href="https://x.com/cyttrust" aria-label="Visit our X profile" data-fr="X" data-ar="إكس">X</a>
     </p>
   </footer>
 
   <!-- Back to Top Button -->
-  <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+  <a href="#" id="back-to-top" aria-label="Back to top" data-fr="Retour en haut" data-ar="العودة للأعلى">↑</a>
 
   <!-- Analytics (Placeholder) -->
   <!-- Add Google Analytics after user consent (GDPR-compliant) -->
@@ -622,14 +797,20 @@ t li h3, #blog .blog-post h3 {
       if (name && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) && message) {
         formMessage.classList.remove('error');
         formMessage.classList.add('success');
-        formMessage.textContent = 'Message sent successfully! We’ll get back to you soon.';
+        const lang = document.body.getAttribute('lang');
+        formMessage.textContent = lang === 'fr' ? 'Message envoyé avec succès ! Nous vous répondrons bientôt.' :
+                                  lang === 'ar' ? 'تم إرسال الرسالة بنجاح! سنرد عليك قريبًا.' :
+                                  'Message sent successfully! We’ll get back to you soon.';
         formMessage.style.display = 'block';
         form.reset();
         // TODO: Add backend integration (e.g., Formspree or custom API) to handle form submission
       } else {
         formMessage.classList.remove('success');
         formMessage.classList.add('error');
-        formMessage.textContent = 'Please fill out all fields correctly.';
+        const lang = document.body.getAttribute('lang');
+        formMessage.textContent = lang === 'fr' ? 'Veuillez remplir tous les champs correctement.' :
+                                  lang === 'ar' ? 'يرجى ملء جميع الحقول بشكل صحيح.' :
+                                  'Please fill out all fields correctly.';
         formMessage.style.display = 'block';
       }
     });
@@ -640,12 +821,19 @@ t li h3, #blog .blog-post h3 {
       backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
 
-    // Basic Language Switcher (Simulated)
+    // Language Switcher
     const languageSelect = document.getElementById('language');
     languageSelect.addEventListener('change', (e) => {
       const lang = e.target.value;
-      document.querySelectorAll('[data-fr]').forEach(el => {
-        el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-fr') ? el.textContent = el.textContent.split('—')[0].trim() : el.textContent;
+      document.body.setAttribute('lang', lang);
+      document.querySelectorAll('[data-fr], [data-ar]').forEach(el => {
+        if (lang === 'fr' && el.getAttribute('data-fr')) {
+          el.textContent = el.getAttribute('data-fr');
+        } else if (lang === 'ar' && el.getAttribute('data-ar')) {
+          el.textContent = el.getAttribute('data-ar');
+        } else {
+          el.textContent = el.textContent.split('—')[0].trim();
+        }
       });
     });
   </script>
