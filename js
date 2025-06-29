@@ -5,26 +5,24 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const sanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
+require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(helmet()); // Security headers
-app.use(cors({ origin: 'https://www.cyttrust.com' }));
+app.use(helmet());
+app.use(cors({ origin: 'https://your-app-name.vercel.app' })); // Update with your Vercel domain
 app.use(express.json());
-app.use(sanitize()); // Prevent MongoDB injection
-app.use(xss()); // Prevent XSS attacks
-
-// Rate limiting
+app.use(sanitize());
+app.use(xss());
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // Limit each IP to 100 requests per window
+  windowMs: 15 * 60 * 1000,
+  max: 100
 });
 app.use('/api', limiter);
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/cyttrust', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('Connected to MongoDB'))
@@ -98,7 +96,5 @@ app.get('/api/blog', async (req, res) => {
   }
 });
 
-// Start Server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// Export the app for Vercel
+module.exports = app;
