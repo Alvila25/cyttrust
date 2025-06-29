@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CytTrust Chad: Expert cybersecurity solutions in N’Djamena, offering risk assessments, penetration testing, and more for enterprises and NGOs.">
+  <meta name="keywords" content="cybersecurity, Chad, N’Djamena, penetration testing, SOC, compliance">
+  <meta property="og:title" content="CytTrust Chad | Cybersecurity Solutions">
+  <meta property="og:description" content="Trusted cybersecurity services for Chad and Central Africa.">
+  <meta property="og:image" content="/assets/logo.png">
+  <meta property="og:url" content="https://www.cyttrust.com">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com;">
   <title>CytTrust Chad | Cybersecurity Solutions</title>
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <style>
     * {
       margin: 0;
@@ -22,7 +30,7 @@
       min-height: 100vh;
     }
 
-    header, nav, section, footer {
+    header, nav, main, section, footer {
       width: 100%;
       max-width: 1200px;
       padding: 20px;
@@ -31,11 +39,16 @@
 
     /* Header / Hero Section */
     header {
-      background: #1a3c5e;
+      background: #1a3c5e url('/assets/hero-bg.jpg') no-repeat center/cover;
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       border-radius: 8px;
+    }
+
+    header img.logo {
+      max-width: 150px;
+      margin-bottom: 20px;
     }
 
     header h1 {
@@ -51,9 +64,10 @@
     header a {
       background: #ff6f61;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
       border-radius: 5px;
+      font-size: 1.1em;
       transition: background 0.3s;
     }
 
@@ -66,6 +80,9 @@
       background: #fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav ul {
@@ -89,6 +106,19 @@
 
     nav ul li a:hover {
       color: #ff6f61;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang-switcher select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
     /* Sections */
@@ -136,6 +166,21 @@
 
     .card-list li p {
       color: #666;
+      margin-bottom: 15px;
+    }
+
+    .card-list li a {
+      background: #ff6f61;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      transition: background 0.3s;
+    }
+
+    .card-list li a:hover {
+      background: #e55a50;
     }
 
     /* About Section List */
@@ -148,6 +193,24 @@
 
     #about ul li {
       margin: 10px 0;
+    }
+
+    /* Clients Section */
+    #clients .client-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    #clients .client-logos img {
+      max-width: 100px;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    #clients .client-logos img:hover {
+      filter: grayscale(0%);
     }
 
     /* Testimonials */
@@ -164,6 +227,28 @@
       margin-top: 10px;
       font-style: italic;
       color: #1a3c5e;
+    }
+
+    /* Blog Section */
+    #blog .blog-posts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    #blog .blog-post {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      width: 280px;
+      text-align: left;
+    }
+
+    #blog .blog-post h3 {
+      font-size: 1.3em;
+      color: #1a3c5e;
+      margin-bottom: 10px;
     }
 
     /* Contact Form */
@@ -194,17 +279,69 @@
       font-size: 1em;
     }
 
+    #contact input:invalid, #contact textarea:invalid {
+      border-color: #ff6f61;
+    }
+
     #contact button {
       background: #ff6f61;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 1.1em;
       transition: background 0.3s;
     }
 
     #contact button:hover {
+      background: #e55a50;
+    }
+
+    #contact .form-message {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #contact .form-message.success {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    #contact .form-message.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    /* Privacy Policy */
+    #privacy ul {
+      list-style: none;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #privacy ul li {
+      margin: 10px 0;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff6f61;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: none;
+      transition: background 0.3s;
+    }
+
+    #back-to-top:hover {
       background: #e55a50;
     }
 
@@ -220,6 +357,7 @@
     footer a {
       color: #ff6f61;
       text-decoration: none;
+      margin: 0 10px;
     }
 
     footer a:hover {
@@ -233,133 +371,283 @@
         align-items: center;
       }
 
-      .card-list li {
+      .card-list li, #blog .blog-post {
         width: 100%;
         max-width: 300px;
+      }
+
+      header, section {
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      header a, #contact button {
+        padding: 10px 20px;
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      section h2 {
+        font-size: 1.5em;
+      }
+
+      .card-lis
+t li h3, #blog .blog-post h3 {
+        font-size: 1.2em;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <select id="language" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
+
   <!-- Header / Hero Section -->
   <header>
-    <h1>CytTrust Chad</h1>
-    <p>Your Trusted Partner in Cybersecurity</p>
-    <a href="#contact">Request a Consultation</a>
+    <img src="/assets/logo.png" alt="CytTrust Chad Logo" class="logo">
+    <h1 data-fr="CytTrust Chad">CytTrust Chad</h1>
+    <p data-fr="Votre partenaire de confiance en cybersécurité">Your Trusted Partner in Cybersecurity</p>
+    <a href="#contact" aria-label="Request a consultation with CytTrust Chad">Request a Consultation</a>
   </header>
 
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Choose Us</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" aria-label="Learn about CytTrust Chad">About</a></li>
+      <li><a href="#services" aria-label="View our cybersecurity services">Services</a></li>
+      <li><a href="#why" aria-label="Why choose CytTrust Chad">Why Choose Us</a></li>
+      <li><a href="#clients" aria-label="Our clients and case studies">Clients</a></li>
+      <li><a href="#testimonials" aria-label="Read client testimonials">Testimonials</a></li>
+      <li><a href="#blog" aria-label="Read our latest blog posts">Blog</a></li>
+      <li><a href="#contact" aria-label="Contact CytTrust Chad">Contact</a></li>
+      <li><a href="#privacy" aria-label="View our privacy policy">Privacy</a></li>
     </ul>
   </nav>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About CytTrust Chad</h2>
-    <p>CytTrust Chad is a private cybersecurity firm based in N’Djamena, founded by ISC2-certified professionals.</p>
-    <p>We serve enterprises, NGOs, financial institutions, and government agencies across Chad and Central Africa.</p>
-    <ul>
-      <li><strong>Mission:</strong> To secure our region’s digital infrastructure with expert-driven cybersecurity solutions.</li>
-      <li><strong>Vision:</strong> A digitally confident Chad where security enables innovation.</li>
-    </ul>
-  </section>
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2 data-fr="À propos de CytTrust Chad">About CytTrust Chad</h2>
+      <p data-fr="CytTrust Chad est une entreprise privée de cybersécurité basée à N’Djamena, fondée par des professionnels certifiés ISC2.">CytTrust Chad is a private cybersecurity firm based in N’Djamena, founded by ISC2-certified professionals.</p>
+      <p data-fr="Nous servons les entreprises, les ONG, les institutions financières et les agences gouvernementales à travers le Tchad et l’Afrique centrale.">We serve enterprises, NGOs, financial institutions, and government agencies across Chad and Central Africa.</p>
+      <ul>
+        <li><strong data-fr="Mission :">Mission:</strong> <span data-fr="Sécuriser l’infrastructure numérique de notre région avec des solutions de cybersécurité pilotées par des experts.">To secure our region’s digital infrastructure with expert-driven cybersecurity solutions.</span></li>
+        <li><strong data-fr="Vision :">Vision:</strong> <span data-fr="Un Tchad numériquement confiant où la sécurité favorise l’innovation.">A digitally confident Chad where security enables innovation.</span></li>
+      </ul>
+    </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Core Services</h2>
-    <ul class="card-list">
-      <li>
-        <h3>Cybersecurity Risk Assessment</h3>
-        <p>Evaluate vulnerabilities and resilience posture.</p>
-      </li>
-      <li>
-        <h3>Penetration Testing & Red Teaming</h3>
-        <p>Simulate real-world attacks to expose and fix weak points.</p>
-      </li>
-      <li>
-        <h3>Managed Security Operations (SOC)</h3>
-        <p>Continuous monitoring, detection & response.</p>
-      </li>
-      <li>
-        <h3>Security Awareness & Training</h3>
-        <p>Build a security-first team culture.</p>
-      </li>
-      <li>
-        <h3>Compliance & Advisory</h3>
-        <p>Align with ISO, GDPR, NIST standards.</p>
-      </li>
-      <li>
-        <h3>Incident Response & Forensics</h3>
-        <p>Rapid support, recovery, and hardening.</p>
-      </li>
-    </ul>
-  </section>
+    <!-- Services Section -->
+    <section id="services">
+      <h2 data-fr="Nos services principaux">Our Core Services</h2>
+      <ul class="card-list">
+        <li>
+          <h3 data-fr="Évaluation des risques en cybersécurité">Cybersecurity Risk Assessment</h3>
+          <p data-fr="Évaluer les vulnérabilités et la posture de résilience.">Evaluate vulnerabilities and resilience posture.</p>
+          <a href="/services/risk-assessment" aria-label="Learn more about Cybersecurity Risk Assessment">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Tests d’intrusion et Red Teaming">Penetration Testing & Red Teaming</h3>
+          <p data-fr="Simuler des attaques réelles pour identifier et corriger les faiblesses.">Simulate real-world attacks to expose and fix weak points.</p>
+          <a href="/services/penetration-testing" aria-label="Learn more about Penetration Testing">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Opérations de sécurité gérées (SOC)">Managed Security Operations (SOC)</h3>
+          <p data-fr="Surveillance continue, détection et réponse.">Continuous monitoring, detection & response.</p>
+          <a href="/services/soc" aria-label="Learn more about Managed Security Operations">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Sensibilisation et formation à la sécurité">Security Awareness & Training</h3>
+          <p data-fr="Construire une culture d’équipe axée sur la sécurité.">Build a security-first team culture.</p>
+          <a href="/services/training" aria-label="Learn more about Security Awareness and Training">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Conformité et conseil">Compliance & Advisory</h3>
+          <p data-fr="S’aligner sur les normes ISO, GDPR, NIST.">Align with ISO, GDPR, NIST standards.</p>
+          <a href="/services/compliance" aria-label="Learn more about Compliance and Advisory">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Réponse aux incidents et forensique">Incident Response & Forensics</h3>
+          <p data-fr="Support rapide, récupération et renforcement.">Rapid support, recovery, and hardening.</p>
+          <a href="/services/incident-response" aria-label="Learn more about Incident Response and Forensics">Learn More</a>
+        </li>
+      </ul>
+    </section>
 
-  <!-- Why Choose Us Section -->
-  <section id="why">
-    <h2>Why Choose CytTrust Chad</h2>
-    <ul class="card-list">
-      <li>
-        <h3>Certified Expertise</h3>
-        <p>ISC2-certified professionals with global & local insights.</p>
-      </li>
-      <li>
-        <h3>Localized Solutions</h3>
-        <p>Tailored strategies for Chad’s digital landscape.</p>
-      </li>
-      <li>
-        <h3>Comprehensive Coverage</h3>
-        <p>From risk audits to rapid incident recovery.</p>
-      </li>
-      <li>
-        <h3>Trusted Relationships</h3>
-        <p>We build long-term partnerships based on trust.</p>
-      </li>
-    </ul>
-  </section>
+    <!-- Why Choose Us Section -->
+    <section id="why">
+      <h2 data-fr="Pourquoi choisir CytTrust Chad">Why Choose CytTrust Chad</h2>
+      <ul class="card-list">
+        <li>
+          <h3 data-fr="Expertise certifiée">Certified Expertise</h3>
+          <p data-fr="Professionnels certifiés ISC2 avec des perspectives globales et locales.">ISC2-certified professionals with global & local insights.</p>
+          <a href="/why/expertise" aria-label="Learn more about our certified expertise">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Solutions localisées">Localized Solutions</h3>
+          <p data-fr="Stratégies adaptées au paysage numérique du Tchad.">Tailored strategies for Chad’s digital landscape.</p>
+          <a href="/why/localized" aria-label="Learn more about our localized solutions">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Couverture complète">Comprehensive Coverage</h3>
+          <p data-fr="Des audits de risques à la récupération rapide des incidents.">From risk audits to rapid incident recovery.</p>
+          <a href="/why/coverage" aria-label="Learn more about our comprehensive coverage">Learn More</a>
+        </li>
+        <li>
+          <h3 data-fr="Relations de confiance">Trusted Relationships</h3>
+          <p data-fr="Nous construisons des partenariats à long terme basés sur la confiance.">We build long-term partnerships based on trust.</p>
+          <a href="/why/trust" aria-label="Learn more about our trusted relationships">Learn More</a>
+        </li>
+      </ul>
+    </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <blockquote>
-      <p>“CytTrust Chad’s assessment transformed our IT security strategy—professional, insightful, and locally attuned.”</p>
-      <cite>— IT Director, National NGO in N’Djamena</cite>
-    </blockquote>
-    <blockquote>
-      <p>“Their penetration testing uncovered critical vulnerabilities we didn’t know existed. A game-changer.”</p>
-      <cite>— CTO, Regional Bank</cite>
-    </blockquote>
-  </section>
+    <!-- Clients Section -->
+    <section id="clients">
+      <h2 data-fr="Nos clients">Our Clients</h2>
+      <div class="client-logos">
+        <img src="/assets/client1.png" alt="Client 1 Logo">
+        <img src="/assets/client2.png" alt="Client 2 Logo">
+        <img src="/assets/client3.png" alt="Client 3 Logo">
+      </div>
+      <p data-fr="Découvrez comment nous avons aidé nos clients à sécuriser leurs opérations.">Learn how we’ve helped clients secure their operations.</p>
+      <a href="/case-studies" aria-label="View our case studies">View Case Studies</a>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Ready to enhance your cyber resilience? Get in touch:</p>
-    <ul>
-      <li>Office: N’Djamena, Chad</li>
-      <li>Email: <a href="mailto:contact@cyttrust.com">contact@cyttrust.com</a></li>
-      <li>Phone: +235 XXX XXX XXX</li>
-    </ul>
-    <form>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h2 data-fr="Témoignages">Testimonials</h2>
+      <blockquote>
+        <p data-fr="L’évaluation de CytTrust Chad a transformé notre stratégie de sécurité informatique—professionnelle, perspicace et adaptée localement.">“CytTrust Chad’s assessment transformed our IT security strategy—professional, insightful, and locally attuned.”</p>
+        <cite>— IT Director, National NGO in N’Djamena</cite>
+      </blockquote>
+      <blockquote>
+        <p data-fr="Leurs tests d’intrusion ont révélé des vulnérabilités critiques que nous ignorions. Un tournant décisif.">“Their penetration testing uncovered critical vulnerabilities we didn’t know existed. A game-changer.”</p>
+        <cite>— CTO, Regional Bank</cite>
+      </blockquote>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2 data-fr="Blog et actualités">Blog & News</h2>
+      <div class="blog-posts">
+        <div class="blog-post">
+          <h3 data-fr="Top 5 des menaces cybernétiques au Tchad en 2025">Top 5 Cybersecurity Threats in Chad for 2025</h3>
+          <p data-fr="Explorez les principales menaces et comment s’y préparer.">Explore the top threats and how to prepare.</p>
+          <a href="/blog/cyber-threats-2025" aria-label="Read more about cybersecurity threats in 2025">Read More</a>
+        </div>
+        <div class="blog-post">
+          <h3 data-fr="Construire une culture de cybersécurité">Building a Cybersecurity Culture</h3>
+          <p data-fr="Conseils pour former vos équipes à la vigilance.">Tips for training your team to stay vigilant.</p>
+          <a href="/blog/cybersecurity-culture" aria-label="Read more about building a cybersecurity culture">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 data-fr="Contactez-nous">Contact Us</h2>
+      <p data-fr="Prêt à renforcer votre résilience cybernétique ? Contactez-nous :">Ready to enhance your cyber resilience? Get in touch:</p>
+      <ul>
+        <li data-fr="Bureau : N’Djamena, Tchad">Office: N’Djamena, Chad</li>
+        <li>Email: <a href="mailto:contact@cyttrust.com" aria-label="Email CytTrust Chad">contact@cyttrust.com</a></li>
+        <li data-fr="Téléphone : +235 XXX XXX XXX">Phone: +235 XXX XXX XXX</li>
+      </ul>
+      <form id="contact-form" novalidate>
+        <label for="name" data-fr="Nom">Name</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+        <label for="email" data-fr="Email">Email</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+        <label for="message" data-fr="Message">Message</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+        <button type="submit" aria-label="Send message to CytTrust Chad" data-fr="Envoyer le message">Send Message</button>
+        <div class="form-message" id="form-message"></div>
+      </form>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy">
+      <h2 data-fr="Politique de confidentialité">Privacy Policy</h2>
+      <p data-fr="Chez CytTrust Chad, nous nous engageons à protéger vos données personnelles.">At CytTrust Chad, we are committed to protecting your personal information.</p>
+      <ul>
+        <li data-fr="Collecte de données : Nous collectons uniquement les données nécessaires via notre formulaire de contact (nom, email, message).">Data Collection: We only collect necessary data via our contact form (name, email, message).</li>
+        <li data-fr="Utilisation : Les données sont utilisées pour répondre à vos demandes et ne sont pas partagées sans consentement.">Usage: Data is used to respond to inquiries and not shared without consent.</li>
+        <li data-fr="Sécurité : Nous utilisons des protocoles sécurisés pour protéger vos données.">Security: We use secure protocols to safeguard your data.</li>
+        <li data-fr="Conformité : Nous respectons les normes GDPR et locales.">Compliance: We adhere to GDPR and local regulations.</li>
+      </ul>
+      <p data-fr="Pour plus de détails, contactez-nous à contact@cyttrust.com.">For more details, contact us at contact@cyttrust.com.</p>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 CytTrust Chad. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+    <p>© 2025 CytTrust Chad. All rights reserved.</p>
+    <p>
+      <a href="#privacy" aria-label="View our privacy policy" data-fr="Politique de confidentialité">Privacy Policy</a> |
+      <a href="https://www.linkedin.com/company/cyttrust" aria-label="Visit our LinkedIn page">LinkedIn</a> |
+      <a href="https://x.com/cyttrust" aria-label="Visit our X profile">X</a>
+    </p>
   </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
+  <!-- Analytics (Placeholder) -->
+  <!-- Add Google Analytics after user consent (GDPR-compliant) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script> -->
+
+  <script>
+    // Form Validation
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('#name').value.trim();
+      const email = form.querySelector('#email').value.trim();
+      const message = form.querySelector('#message').value.trim();
+
+      if (name && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) && message) {
+        formMessage.classList.remove('error');
+        formMessage.classList.add('success');
+        formMessage.textContent = 'Message sent successfully! We’ll get back to you soon.';
+        formMessage.style.display = 'block';
+        form.reset();
+        // TODO: Add backend integration (e.g., Formspree or custom API) to handle form submission
+      } else {
+        formMessage.classList.remove('success');
+        formMessage.classList.add('error');
+        formMessage.textContent = 'Please fill out all fields correctly.';
+        formMessage.style.display = 'block';
+      }
+    });
+
+    // Back to Top Button Visibility
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    // Basic Language Switcher (Simulated)
+    const languageSelect = document.getElementById('language');
+    languageSelect.addEventListener('change', (e) => {
+      const lang = e.target.value;
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-fr') ? el.textContent = el.textContent.split('—')[0].trim() : el.textContent;
+      });
+    });
+  </script>
 </body>
 </html>
